@@ -2,10 +2,8 @@
 import React, { useState } from "react";
 import Footer from "../../components/Shared/Footer/Footer";
 import Header from "../../components/Shared/Header/Header";
-import { networkList } from "../../components/Shared/Header/Header";
 
 const Home = () => {
-  const [network, setNetwork] = useState(networkList[0]);
   const [inputValue, setInputValue] = useState({
     sum: 50,
     wallet_num: 30
@@ -20,11 +18,16 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(inputValue)
   };
+const [wallet, setWallet] = useState("0x0EE1...C87C")
+  const addWalletAddres = () =>{
+    setWallet("0x0EE1...C87C")
+  }
 
   return (
     <>
-      <Header network={network} setNetwork={setNetwork} />
+      <Header wallet={wallet} />
       <div className="home_wrapper">
         <div className="container">
           <div className="home_content">
@@ -43,11 +46,11 @@ const Home = () => {
             <div className="display_content">
               <div className="content">
                 <span className="sum">Total Sum</span>
-                <span className="value">{inputValue.sum}</span>
+                <span className="value">50</span>
               </div>
               <div className="content">
                 <span className="sum">Total Number of Wallets</span>
-                <span className="value">{inputValue.wallet_num}</span>
+                <span className="value">30</span>
               </div>
             </div>
           </div>

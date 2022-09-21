@@ -25,7 +25,7 @@ export const networkList = [
   },
 ];
 
-const Header = ({ network, setNetwork }) => {
+const Header = ({ wallet }) => {
   const [openModal, setOpenModal] = useState(false);
   const modalRef = useRef(null);
   useClickOutside(modalRef, () => setOpenModal(false));
@@ -47,7 +47,7 @@ const Header = ({ network, setNetwork }) => {
                     type="button"
                     className="connect_btn"
                   >
-                    0x0EE1...C87C
+                    {wallet}
                   </Button>
                 </div>
               </div>
